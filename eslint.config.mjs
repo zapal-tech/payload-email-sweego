@@ -1,0 +1,13 @@
+export { default } from '@zapal/dx/eslint'
+
+// {
+//   "root": true,
+//   "env": { "browser": true, "es2022": true },
+//   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+//   "ignorePatterns": ["dist", ".eslintrc.json"],
+//   "parser": "@typescript-eslint/parser",
+//   "rules": {
+//     "@typescript-eslint/no-explicit-any": 1,
+//     "@typescript-eslint/no-unused-vars": 1
+//   }
+// }

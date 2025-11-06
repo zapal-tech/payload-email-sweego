@@ -74,14 +74,6 @@ describe('payload-email-sweego', () => {
 
   // Error response does not described in the docs
   it('should throw an error if the email fails to send', async () => {
-    const errorResponse = {
-      detail: [
-        {
-          message: 'error message',
-          field: 'field',
-        },
-      ],
-    }
     // @ts-expect-error mocking global fetch
     global.fetch = jest.spyOn(global, 'fetch')
 
