@@ -41,7 +41,7 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "check-updates": "pnpx taze major -r",
     "clean": "rimraf {dist,*.tsbuildinfo}",
-    "lint": "eslint . --ext ts,tsx",
+    "lint": "eslint . --ignore-pattern='dist/'",
     "lint:types": "tsc",
     "prepare": "node scripts/prepare",
     "prepublishOnly": "pnpm clean && pnpm build",
