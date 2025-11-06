@@ -1,0 +1,86 @@
+{
+  "name": "@zapal/payload-email-sweego",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Payload CMS Sweego Email Adapter",
+  "keywords": [
+    "payload",
+    "cms",
+    "email",
+    "sweego",
+    "adapter",
+    "zapal",
+    "zapal-tech"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zapal-tech/payload-email-sweego.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Zapal",
+    "email": "hello@zapal.tech",
+    "url": "https://www.zapal.tech"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.es",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm build:types && pnpm build:swc",
+    "build:swc": "swc ./src -d ./dist --config-file .swcrc-build --strip-leading-paths",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "check-updates": "pnpx taze major -r",
+    "clean": "rimraf {dist,*.tsbuildinfo}",
+    "lint": "eslint . --ext ts,tsx",
+    "lint:types": "tsc",
+    "prepare": "node scripts/prepare",
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,js,json,json5,html,gql,graphql,md,css,scss}\"",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@jest/globals": "^30.2.0",
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.0",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "29.5.12",
+    "@types/node": "^22.19.0",
+    "@types/nodemailer": "^6.4.21",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "@zapal/dx": "^1.4.0",
+    "dotenv": "17.2.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.2.6",
+    "payload": "3.62.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "2.5.19",
+    "rimraf": "^6.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "payload": "^3.0.0"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
