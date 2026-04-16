@@ -1,8 +1,6 @@
 import type Mail from 'nodemailer/lib/mailer'
 import { APIError, type EmailAdapter, type SendEmailOptions } from 'payload'
 
-import 'dotenv/config'
-
 export type SweegoAdapterArgs = {
   apiKey: string
   defaultFromAddress: string
